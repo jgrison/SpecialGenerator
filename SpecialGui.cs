@@ -44,9 +44,10 @@ namespace SpecialGenerator
             {
                 vImagesDownload.Add(vehicles[i]);
             }
-
+            
             if (chkDownload.Checked)
             {
+                // Loops through and downloads all the image files
                 for (int i = 0; i <= vImagesDownload.Count / 4; i++)
                 {
                     preownedSpecial.DownloadImages(vImagesDownload[0], vImagesDownload[4]);
@@ -54,6 +55,7 @@ namespace SpecialGenerator
                 }
             }
 
+            // Loops through and writes the images
             for (int i = 0; i <= vehicles.Count / 4; i++)
             {
                 preownedSpecial.GenerateSpecial(cmbDealership.SelectedIndex, vehicles[0], vehicles[1], vehicles[2], vehicles[3], saveLocation);
