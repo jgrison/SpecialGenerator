@@ -20,11 +20,9 @@ namespace SpecialGenerator
         private void SpecailGui_Load(object sender, EventArgs e)
         {
             cmbDealership.Items.Add("Toyota Town");
-            cmbDealership.Items.Add("Lexus Of London");
             cmbDealership.Items.Add("Richmond Hill Toyota");
+            cmbDealership.Items.Add("Lexus Of London");
             cmbDealership.SelectedIndex = 0;
-
-            MessageBox.Show(cmbDealership.SelectedIndex.ToString());
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
