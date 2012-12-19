@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SpecialGenerator
 {
-    public partial class Form1 : Form
+    public partial class SpecailGui : Form
     {
-        public Form1()
+        public SpecailGui()
         {
             InitializeComponent();
+        }
+
+        private void SpecailGui_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
