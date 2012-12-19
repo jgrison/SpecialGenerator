@@ -33,6 +33,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.openText = new System.Windows.Forms.OpenFileDialog();
+            this.txtSaveLocation = new System.Windows.Forms.TextBox();
+            this.btnSaveLocation = new System.Windows.Forms.Button();
+            this.saveFolder = new System.Windows.Forms.FolderBrowserDialog();
+            this.cmbDealership = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +52,7 @@
             // 
             // btnOpenTextFile
             // 
-            this.btnOpenTextFile.Location = new System.Drawing.Point(179, 28);
+            this.btnOpenTextFile.Location = new System.Drawing.Point(179, 65);
             this.btnOpenTextFile.Name = "btnOpenTextFile";
             this.btnOpenTextFile.Size = new System.Drawing.Size(75, 23);
             this.btnOpenTextFile.TabIndex = 1;
@@ -58,6 +62,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbDealership);
+            this.groupBox1.Controls.Add(this.btnSaveLocation);
+            this.groupBox1.Controls.Add(this.txtSaveLocation);
             this.groupBox1.Controls.Add(this.txtFileName);
             this.groupBox1.Controls.Add(this.btnOpenTextFile);
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
@@ -69,7 +76,7 @@
             // 
             // txtFileName
             // 
-            this.txtFileName.Location = new System.Drawing.Point(6, 30);
+            this.txtFileName.Location = new System.Drawing.Point(6, 67);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.Size = new System.Drawing.Size(167, 20);
             this.txtFileName.TabIndex = 2;
@@ -77,6 +84,31 @@
             // openText
             // 
             this.openText.FileName = "openText";
+            // 
+            // txtSaveLocation
+            // 
+            this.txtSaveLocation.Location = new System.Drawing.Point(6, 106);
+            this.txtSaveLocation.Name = "txtSaveLocation";
+            this.txtSaveLocation.Size = new System.Drawing.Size(167, 20);
+            this.txtSaveLocation.TabIndex = 3;
+            // 
+            // btnSaveLocation
+            // 
+            this.btnSaveLocation.Location = new System.Drawing.Point(180, 102);
+            this.btnSaveLocation.Name = "btnSaveLocation";
+            this.btnSaveLocation.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveLocation.TabIndex = 4;
+            this.btnSaveLocation.Text = "Browse";
+            this.btnSaveLocation.UseVisualStyleBackColor = true;
+            this.btnSaveLocation.Click += new System.EventHandler(this.btnSaveLocation_Click);
+            // 
+            // cmbDealership
+            // 
+            this.cmbDealership.FormattingEnabled = true;
+            this.cmbDealership.Location = new System.Drawing.Point(6, 29);
+            this.cmbDealership.Name = "cmbDealership";
+            this.cmbDealership.Size = new System.Drawing.Size(121, 21);
+            this.cmbDealership.TabIndex = 5;
             // 
             // SpecialGui
             // 
@@ -101,6 +133,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.OpenFileDialog openText;
+        private System.Windows.Forms.Button btnSaveLocation;
+        private System.Windows.Forms.TextBox txtSaveLocation;
+        private System.Windows.Forms.FolderBrowserDialog saveFolder;
+        private System.Windows.Forms.ComboBox cmbDealership;
 
     }
 }

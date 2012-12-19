@@ -60,5 +60,17 @@ namespace SpecialGenerator
                 return ex.ToString();
             }
         }
+
+        // Generate the preowned specials
+        public string GenerateSpecial(int dealershipID, string vehicleStockNumber, string vehiclePreviousPrice, string vehiclePrice, string vehicleName, string saveLocation)
+        {
+            // Select the correct template based on dealership ID
+
+            // Apply vehicle image and information to the template
+
+            // Save the special and push success or failure message
+
+            return "Success";
+        }
     }
 }
