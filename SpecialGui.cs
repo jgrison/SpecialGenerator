@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SpecialGenerator
 {
-    public partial class SpecailGui : Form
+    public partial class SpecialGui : Form
     {
-        public SpecailGui()
+        public SpecialGui()
         {
             InitializeComponent();
         }
@@ -26,12 +26,24 @@ namespace SpecialGenerator
         {
             List<string> vehicles = new List<string>();
 
-            string fileToParse = @"C:\Users\Jeff\Documents\Visual Studio 2012\Projects\SpecialGenerator\Test\cars.txt";
+            string fileToParse = txtFileName.Text;
 
             SpecialCreator preownedSpecial = new SpecialCreator();
 
             vehicles = preownedSpecial.ParseDocument(fileToParse);
-            MessageBox.Show(vehicles[0] + vehicles[1] + vehicles[2] + vehicles[3]);
+
+            MessageBox.Show(vehicles[0] + "\n" + vehicles[1] + "\n" + vehicles[2] + "\n" + vehicles[3] + "\n" + vehicles[4]);
+        }
+
+        private void btnOpenTextFile_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openText.ShowDialog(); 
+
+            if (result == DialogResult.OK)
+            {
+                string file = openText.FileName;
+                txtFileName.Text = file;
+            }
         }
     }
 }

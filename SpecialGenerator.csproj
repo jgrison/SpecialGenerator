@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SpecailGui.cs">
+    <Compile Include="SpecialGui.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SpecailGui.Designer.cs">
-      <DependentUpon>SpecailGui.cs</DependentUpon>
+    <Compile Include="SpecialGui.Designer.cs">
+      <DependentUpon>SpecialGui.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,8 +62,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SpecailGui.resx">
-      <DependentUpon>SpecailGui.cs</DependentUpon>
+    <EmbeddedResource Include="SpecialGui.resx">
+      <DependentUpon>SpecialGui.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
