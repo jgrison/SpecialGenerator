@@ -18,25 +18,33 @@ namespace SpecialGenerator
             List<string> vehicleList = new List<string>();
             string line;
 
-            using (StreamReader file = new StreamReader(@fileLocation))
+            try
             {
-                while ((line = file.ReadLine()) != null)
+                using (StreamReader file = new StreamReader(@fileLocation))
                 {
-
-                    char[] delimiters = new char[] { '|' };
-
-                    string[] parts = line.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-
-                    for (int i = 0; i < parts.Length; i++)
+                    while ((line = file.ReadLine()) != null)
                     {
-                        vehicleList.Add(parts[i]);
+
+                        char[] delimiters = new char[] { '|' };
+
+                        string[] parts = line.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
+                        for (int i = 0; i < parts.Length; i++)
+                        {
+                            vehicleList.Add(parts[i]);
+                        }
                     }
+
+                    file.Close();
                 }
 
-                file.Close();
+                return vehicleList;
             }
-
-            return vehicleList;
+            catch (IOException ex)
+            {
+                MessageBox.Show(ex.ToString(), "File Read Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return vehicleList;
+            }
         }
 
         // Download the Images
