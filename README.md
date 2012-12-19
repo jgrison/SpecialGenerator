@@ -1,0 +1,4 @@
+SpecialGenerator
+================
+
+Generates dealer specials
