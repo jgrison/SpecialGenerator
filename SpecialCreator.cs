@@ -24,9 +24,7 @@ namespace SpecialGenerator
                 {
                     while ((line = file.ReadLine()) != null)
                     {
-
                         char[] delimiters = new char[] { '|' };
-
                         string[] parts = line.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
                         for (int i = 0; i < parts.Length; i++)
@@ -34,7 +32,7 @@ namespace SpecialGenerator
                             vehicleList.Add(parts[i]);
                         }
                     }
-
+                    
                     file.Close();
                 }
 
@@ -48,25 +46,19 @@ namespace SpecialGenerator
         }
 
         // Download the Images
-        public string DownloadImages(List<string> vehicles)
+        public string DownloadImages(string vehicleStockNumber, string vehicleImage)
         {
             try
             {
                 WebClient webClient = new WebClient();
-
-                for (int i = 0; i <= vehicles.Count / 2; i++)
-                {
-                    webClient.DownloadFile(vehicles[1], @"c:\" + vehicles[0] + ".jpg");
-                    vehicles.RemoveAt(1);
-                    vehicles.RemoveAt(0);
-                }
-
+                webClient.DownloadFile(vehicleImage, @"C:\Users\jgrison\Documents\Development\Test\Cars\" + vehicleStockNumber + ".jpg");
                 webClient.Dispose();
                 return "Success";
             }
             catch (Exception ex)
             {
-                return ex.ToString();
+                MessageBox.Show(ex.ToString());
+                return "nope";
             }
         }
 

@@ -37,12 +37,14 @@
             this.btnSaveLocation = new System.Windows.Forms.Button();
             this.saveFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.cmbDealership = new System.Windows.Forms.ComboBox();
+            this.imgLocationDownload = new System.Windows.Forms.FolderBrowserDialog();
+            this.chkDownload = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(181, 228);
+            this.btnCreate.Location = new System.Drawing.Point(185, 299);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(87, 23);
             this.btnCreate.TabIndex = 0;
@@ -62,14 +64,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkDownload);
             this.groupBox1.Controls.Add(this.cmbDealership);
             this.groupBox1.Controls.Add(this.btnSaveLocation);
             this.groupBox1.Controls.Add(this.txtSaveLocation);
             this.groupBox1.Controls.Add(this.txtFileName);
             this.groupBox1.Controls.Add(this.btnOpenTextFile);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 209);
+            this.groupBox1.Size = new System.Drawing.Size(260, 146);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Special Generator";
@@ -110,11 +113,21 @@
             this.cmbDealership.Size = new System.Drawing.Size(121, 21);
             this.cmbDealership.TabIndex = 5;
             // 
+            // chkDownload
+            // 
+            this.chkDownload.AutoSize = true;
+            this.chkDownload.Location = new System.Drawing.Point(148, 31);
+            this.chkDownload.Name = "chkDownload";
+            this.chkDownload.Size = new System.Drawing.Size(106, 17);
+            this.chkDownload.TabIndex = 6;
+            this.chkDownload.Text = "Image Download";
+            this.chkDownload.UseVisualStyleBackColor = true;
+            // 
             // SpecialGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 257);
+            this.ClientSize = new System.Drawing.Size(284, 332);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCreate);
             this.Name = "SpecialGui";
@@ -137,6 +150,8 @@
         private System.Windows.Forms.TextBox txtSaveLocation;
         private System.Windows.Forms.FolderBrowserDialog saveFolder;
         private System.Windows.Forms.ComboBox cmbDealership;
+        private System.Windows.Forms.FolderBrowserDialog imgLocationDownload;
+        private System.Windows.Forms.CheckBox chkDownload;
 
     }
 }

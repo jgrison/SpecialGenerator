@@ -38,8 +38,27 @@ namespace SpecialGenerator
             // Parse the document and load in all the vehicles
             vehicles = preownedSpecial.ParseDocument(fileToParse);
 
-            // Generate the specials
-            preownedSpecial.GenerateSpecial(cmbDealership.SelectedIndex, vehicles[0], vehicles[1], vehicles[2], vehicles[3], saveLocation);
+            List<string> vImagesDownload = new List<string>();
+
+            for (int i = 0; i <= vehicles.Count - 1; i++)
+            {
+                vImagesDownload.Add(vehicles[i]);
+            }
+
+            if (chkDownload.Checked)
+            {
+                for (int i = 0; i <= vImagesDownload.Count / 4; i++)
+                {
+                    preownedSpecial.DownloadImages(vImagesDownload[0], vImagesDownload[4]);
+                    vImagesDownload.RemoveRange(0, 5);
+                }
+            }
+
+            for (int i = 0; i <= vehicles.Count / 4; i++)
+            {
+                preownedSpecial.GenerateSpecial(cmbDealership.SelectedIndex, vehicles[0], vehicles[1], vehicles[2], vehicles[3], saveLocation);
+                vehicles.RemoveRange(0, 5);
+            }
         }
 
         private void btnOpenTextFile_Click(object sender, EventArgs e)
