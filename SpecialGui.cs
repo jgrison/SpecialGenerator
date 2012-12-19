@@ -56,10 +56,21 @@ namespace SpecialGenerator
             }
 
             // Loops through and writes the images
-            for (int i = 0; i <= vehicles.Count / 4; i++)
+            try
             {
-                preownedSpecial.GenerateSpecial(cmbDealership.SelectedIndex, vehicles[0], vehicles[1], vehicles[2], vehicles[3], saveLocation);
-                vehicles.RemoveRange(0, 5);
+                for (int i = 0; i <= vehicles.Count / 4; i++)
+                {
+                    preownedSpecial.GenerateSpecial(cmbDealership.SelectedIndex, vehicles[0], vehicles[1], vehicles[2], vehicles[3], saveLocation);
+                    vehicles.RemoveRange(0, 5);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error Creating Ads", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                MessageBox.Show("Success! Your ad's have been written to " + saveLocation, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
